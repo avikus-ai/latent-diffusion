@@ -1,3 +1,17 @@
+## Result
+
+```bash
+python inpaint.py
+```
+
+|Output|
+|---|
+|![](outputs/result_ship1.jpg)
+|![](outputs/result_ship2.jpg)
+|![](outputs/result_ship3.jpg)
+|![](outputs/result_ship4.jpg)
+|![](outputs/result_ship5.jpg)
+
 # Latent Diffusion Models
 [arXiv](https://arxiv.org/abs/2112.10752) | [BibTeX](#bibtex)
 
@@ -39,6 +53,8 @@ and activated with:
 ```
 conda env create -f environment.yaml
 conda activate ldm
+pip install packaging==21.3
+pip install 'torchmetrics<0.8'
 ```
 
 # Pretrained Models
