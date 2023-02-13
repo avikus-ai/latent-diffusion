@@ -3,9 +3,9 @@ from ldm.util import instantiate_from_config
 import torch
 import os
 # todo ?
-from google.colab import files
+# from google.colab import files
 from IPython.display import Image as ipyimg
-import ipywidgets as widgets
+# import ipywidgets as widgets
 from PIL import Image
 from numpy import asarray
 from einops import rearrange, repeat
@@ -44,7 +44,7 @@ def load_model_from_config(config, ckpt):
     sd = pl_sd["state_dict"]
     model = instantiate_from_config(config.model)
     m, u = model.load_state_dict(sd, strict=False)
-    model.cuda()
+    model.to(torch.device("cuda:1"))
     model.eval()
     return {"model": model}, global_step
 
@@ -112,7 +112,7 @@ def get_cond(mode, selected_path):
 
         c = Image.open(selected_path)
         c = torch.unsqueeze(torchvision.transforms.ToTensor()(c), 0)
-        c_up = torchvision.transforms.functional.resize(c, size=[up_f * c.shape[2], up_f * c.shape[3]], antialias=True)
+        c_up = torchvision.transforms.functional.resize(c, size=[up_f * c.shape[2], up_f * c.shape[3]])
         c_up = rearrange(c_up, '1 c h w -> 1 h w c')
         c = rearrange(c, '1 c h w -> 1 h w c')
         c = 2. * c - 1.
