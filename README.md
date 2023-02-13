@@ -1,4 +1,22 @@
-## Result
+## Result (Super Resolution x4)
+
+```bash
+wget -O models/ldm/bsr_sr/model.zip https://ommer-lab.com/files/latent-diffusion/sr_bsr.zip
+cd models/ldm/bsr_sr/ && unzip -o model.zip
+```
+
+```bash
+python super_resolution.py
+```
+
+|Original|Output|
+|---|---|
+|![](outputs/super_resolution/1.png)|![](outputs/super_resolution/result_1.jpg)|
+|![](outputs/super_resolution/2.jpg)|![](outputs/super_resolution/result_2.jpg)|
+|![](outputs/super_resolution/3.jpg)|![](outputs/super_resolution/result_3.jpg)|
+
+
+## Result (Inpaint)
 
 ```bash
 python inpaint.py
