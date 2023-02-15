@@ -29,6 +29,7 @@ python inpaint.py
 |![](outputs/result_ship3.jpg)
 |![](outputs/result_ship4.jpg)
 |![](outputs/result_ship5.jpg)
+|![](outputs/result_ship6.jpg)
 
 # Latent Diffusion Models
 [arXiv](https://arxiv.org/abs/2112.10752) | [BibTeX](#bibtex)
